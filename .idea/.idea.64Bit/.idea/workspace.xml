@@ -21,6 +21,9 @@
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Bits.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/BitExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/MyExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/DrawerMono.cs" />
       </list>
     </option>
