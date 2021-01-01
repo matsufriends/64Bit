@@ -152,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mCellPrefab: {fileID: 8156045148063113161, guid: 09e4e7dfc6ef0234ea0e2736c9ee26e8,
     type: 3}
-  mScaleDuration: 0.5
-  mScaleEase: 30
+  mScaleDuration: 0.2
+  mScaleEase: 12
 --- !u!4 &704517974
 Transform:
   m_ObjectHideFlags: 0

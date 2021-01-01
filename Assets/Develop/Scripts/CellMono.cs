@@ -22,8 +22,9 @@ namespace Develop.Scripts {
         }
 
         public void ScaleUp(ColorType _colorType, float _duration, Ease _ease) {
-            mBlackTween.Complete();
-            mWhiteTween.Complete();
+            if (Color == _colorType) return;
+            mBlackTween.Kill();
+            mWhiteTween.Kill();
             
             mBlackPanel.gameObject.SetActive(true);
             mWhitePanel.gameObject.SetActive(true);
