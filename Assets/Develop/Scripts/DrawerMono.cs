@@ -52,6 +52,7 @@ namespace Develop.Scripts {
             var up    = Input.GetKeyDown(KeyCode.UpArrow);
             var right = Input.GetKeyDown(KeyCode.RightArrow);
             var down  = Input.GetKeyDown(KeyCode.DownArrow);
+            var space = Input.GetKeyDown(KeyCode.Space);
 
             if (Input.GetMouseButton(0)) {
                 var mousePos = Input.mousePosition;
@@ -78,6 +79,16 @@ namespace Develop.Scripts {
                 for (var y = 0; y < 8; y++) {
                     for (var x = 0; x < 8; x++) {
                         ScaleUp(x, y, colors[x, y]);
+                    }
+                }
+            }
+
+            if (space) {
+                for (var y = 0; y < 8; y++) {
+                    for (var x = 0; x < 8; x++) {
+                        if (x == 0 || y == 0 || x == 7 || y == 7) {
+                            ScaleUp(x, y, Color(x,y).Reverse());
+                        }
                     }
                 }
             }
