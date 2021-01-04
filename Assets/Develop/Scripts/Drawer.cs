@@ -1,5 +1,7 @@
-﻿using UniRx;
+﻿using System;
+using UniRx;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Develop.Scripts {
     public class Drawer {
@@ -8,6 +10,9 @@ namespace Develop.Scripts {
         private readonly ColorType[,] mStartColors = new ColorType[8, 8];
         private readonly ColorType[,] mDrewColors  = new ColorType[8, 8];
 
+        private readonly ReactiveProperty<int> mCount = new ReactiveProperty<int>();
+
+        public IObservable<int> OnCountChanged => mCount;
 
         public Drawer() {
             //初期化
@@ -21,6 +26,7 @@ namespace Develop.Scripts {
             InputManager.OnDirectionInput.Subscribe(
                 _dir => {
                     DrawCell(SlideCell(mDrewColors, _dir));
+                    mCount.Value++;
                 }
             );
 
@@ -28,6 +34,15 @@ namespace Develop.Scripts {
             InputManager.OnSpaceInput.Subscribe(
                 _ => {
                     DrawCell(AroundCell(mDrewColors));
+                    mCount.Value++;
+                }
+            );
+
+            //リスタート
+            SerializeManagerMono.Instance.OnRestartButton.Subscribe(
+                _ => {
+                    DrawCell(mStartColors);
+                    mCount.Value = 0;
                 }
             );
 
@@ -67,26 +82,32 @@ namespace Develop.Scripts {
             }
         }
 
-        public void Randomize(in int _depth) {
+        public void Randomize(in int _depth, in int _slideCount, int _reverse) {
             //初期化
             var tmpColors = new ColorType[8, 8];
-            var dir = new[] {
+            var dirVector = new[] {
                 Vector2Int.left
               , Vector2Int.up
               , Vector2Int.right
               , Vector2Int.down
             };
 
-            var beforeDir = 0;
-
+            var beforeDir = Random.Range(0, 4);
             
+            //スコア初期化
+            mCount.Value = 0;
+
+
             //ランダム化
             tmpColors = AroundCell(tmpColors);
-            tmpColors = SlideCell(tmpColors, dir[Random.Range(0, 4)]);
 
             for (var i = 0; i < _depth; i++) {
-                if (Random.Range(0, 2) == 0) tmpColors = AroundCell(tmpColors);
-                else tmpColors                         = SlideCell(tmpColors, dir[Random.Range(0, 4)]);
+                //スライド
+                beforeDir = (beforeDir + 1 + Random.Range(0, 2) * 2) % 4;
+                for (var j = Random.Range(1, _slideCount); j > 0; j--) tmpColors = SlideCell(tmpColors, dirVector[beforeDir]);
+
+                //反転
+                if (Random.Range(0, 100) >= _reverse) tmpColors = AroundCell(tmpColors);
             }
 
             //初期の設定
@@ -95,9 +116,8 @@ namespace Develop.Scripts {
                     mStartColors[x, y] = tmpColors[x, y];
                 }
             }
-            
+
             DrawCell(tmpColors);
         }
-}
-
+    }
 }

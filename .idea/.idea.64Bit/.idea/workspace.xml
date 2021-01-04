@@ -35,8 +35,8 @@
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorType.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/BitExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellMono.cs" />
-        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/SerializeManagerMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Drawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/SerializeManagerMono.cs" />
       </list>
     </option>
   </component>
