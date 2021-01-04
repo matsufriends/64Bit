@@ -1,7 +1,6 @@
 namespace Develop.Scripts {
     public enum ColorType {
-        Red
-      , Black
+        Black
       , White
     }
 }

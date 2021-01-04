@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Develop.Scripts {
     public static class BitExtensions {
         public static ColorType Reverse(this ColorType _base) {
-            return _base == ColorType.Black ? ColorType.White : _base == ColorType.White ? ColorType.Black : ColorType.Red;
+            return _base == ColorType.Black ? ColorType.White : ColorType.Black;
         }
 
         public static void SetScale(this Transform _base, Vector3 _scale) {
