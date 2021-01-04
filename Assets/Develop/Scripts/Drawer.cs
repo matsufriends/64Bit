@@ -39,7 +39,7 @@ namespace Develop.Scripts {
             var tmpColors = new ColorType[8, 8];
             for (var y = 8; y < 16; y++) {
                 for (var x = 8; x < 16; x++) {
-                    tmpColors[x%8, y%8] = _baseColors[(x - _dir.x) % 8, (y + _dir.y) % 8];
+                    tmpColors[x % 8, y % 8] = _baseColors[(x - _dir.x) % 8, (y + _dir.y) % 8];
                 }
             }
 
@@ -66,5 +66,38 @@ namespace Develop.Scripts {
                 }
             }
         }
-    }
+
+        public void Randomize(in int _depth) {
+            //初期化
+            var tmpColors = new ColorType[8, 8];
+            var dir = new[] {
+                Vector2Int.left
+              , Vector2Int.up
+              , Vector2Int.right
+              , Vector2Int.down
+            };
+
+            var beforeDir = 0;
+
+            
+            //ランダム化
+            tmpColors = AroundCell(tmpColors);
+            tmpColors = SlideCell(tmpColors, dir[Random.Range(0, 4)]);
+
+            for (var i = 0; i < _depth; i++) {
+                if (Random.Range(0, 2) == 0) tmpColors = AroundCell(tmpColors);
+                else tmpColors                         = SlideCell(tmpColors, dir[Random.Range(0, 4)]);
+            }
+
+            //初期の設定
+            for (var y = 0; y < 8; y++) {
+                for (var x = 0; x < 8; x++) {
+                    mStartColors[x, y] = tmpColors[x, y];
+                }
+            }
+            
+            DrawCell(tmpColors);
+        }
+}
+
 }

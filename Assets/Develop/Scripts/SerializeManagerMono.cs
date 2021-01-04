@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
@@ -32,6 +33,11 @@ namespace Develop.Scripts {
             cellTrans.localPosition = new Vector2(_x - 3.5f, -_y + 3.5f) * cCellSize;
             cellTrans.name          = $"({_x},{_y})";
             return cell;
+        }
+
+        [Button("Randomize")]
+        private void Randomize(int _count) {
+            mDrawer.Randomize(_count);
         }
     }
 }
