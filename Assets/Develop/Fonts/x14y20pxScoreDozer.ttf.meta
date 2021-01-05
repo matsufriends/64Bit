@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73585a60e6ffa6140a36d3c24b801d10
+guid: 5dc7de20bb7e23c48bd7612ca9972264
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: 8BIT WONDER
+  fontName: x14y20pxScoreDozer
   fontNames:
-  - 8BIT WONDER
+  - x14y20pxScoreDozer
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

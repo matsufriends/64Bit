@@ -7,13 +7,22 @@ using UnityEngine.UI;
 
 namespace Develop.Scripts {
     public class SerializeManagerMono : SingletonMono<SerializeManagerMono> {
-        [SerializeField] private GameObject mCellButton;
-        [SerializeField] private GameObject mPreviousButton;
-        [SerializeField] private GameObject mNextButton;
-        [SerializeField] private GameObject mRestartButton;
-        [SerializeField] private GameObject mNewButton;
-        [SerializeField] private GameObject mRankingButton;
-        [SerializeField] private Text       mCountText;
+        [SerializeField] private GameObject mStagePreviousButton;
+        [SerializeField] private GameObject mStageNextButton;
+
+        [SerializeField] private GameObject mCellPreviousButton;
+        [SerializeField] private GameObject mCellNextButton;
+        [SerializeField] private GameObject mCellResetButton;
+        [SerializeField] private GameObject mHelpButton;
+
+        [SerializeField] private GameObject mLeftButton;
+        [SerializeField] private GameObject mUpButton;
+        [SerializeField] private GameObject mRightButton;
+        [SerializeField] private GameObject mDownButton;
+        [SerializeField] private GameObject mReverseButton;
+
+        [SerializeField] private Text mStageNumText;
+        [SerializeField] private Text mCountText;
 
         [SerializeField] private CellMono mCellPrefab;
 
@@ -23,17 +32,16 @@ namespace Develop.Scripts {
 
 
         private       Drawer mDrawer;
-        private const float  cCellSize = 1 / 4f;
+        private const float  cCellSize = 0.2f;
 
-        public  IObservable<Unit> OnPreviousButton => mPreviousButton.OnMouseDownAsObservable();
-        public  IObservable<Unit> OnNextButton     => mNextButton.OnMouseDownAsObservable();
-        public  IObservable<Unit> OnRestartButton  => mRestartButton.OnMouseDownAsObservable();
-        private IObservable<Unit> OnNewButton      => mNewButton.OnMouseDownAsObservable();
-        public  IObservable<Unit> OnRankingButton  => mRankingButton.OnMouseDownAsObservable();
+        public  IObservable<Unit> OnPreviousButton => mCellPreviousButton.OnMouseDownAsObservable();
+        public  IObservable<Unit> OnNextButton     => mCellNextButton.OnMouseDownAsObservable();
+        public  IObservable<Unit> OnRestartButton  => mCellResetButton.OnMouseDownAsObservable();
+        private IObservable<Unit> OnNewButton      => mLeftButton.OnMouseDownAsObservable();
 
         private void Awake() {
             mDrawer = new Drawer();
-            
+
             //カウント更新
             mDrawer.OnCountChanged.Subscribe(_count => mCountText.text = _count.ToString());
 
