@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace Develop.Scripts {
     public class CellMono : MonoBehaviour {
-        [SerializeField] private Transform mBlackPanel;
-        [SerializeField] private Transform mWhitePanel;
+        [SerializeField] private SpriteRenderer mSpriteRenderer;
+        [SerializeField] private Transform      mBlackPanel;
+        [SerializeField] private Transform      mWhitePanel;
 
         private ColorType mCachedColor;
 
