@@ -7,8 +7,8 @@ namespace Develop.Scripts {
     public class Drawer {
         private readonly CellMono[,] mCellMonoArrays = new CellMono[8, 8];
 
-        private readonly ColorType[,] mStartColors = new ColorType[8, 8];
-        private readonly ColorType[,] mDrewColors  = new ColorType[8, 8];
+        private readonly LightType[,] mStartColors = new LightType[8, 8];
+        private readonly LightType[,] mDrewColors  = new LightType[8, 8];
 
         private readonly ReactiveProperty<int> mCount = new ReactiveProperty<int>();
 
@@ -50,8 +50,8 @@ namespace Develop.Scripts {
             DrawCell(mStartColors);
         }
 
-        private static ColorType[,] SlideCell(in ColorType[,] _baseColors, in Vector2Int _dir) {
-            var tmpColors = new ColorType[8, 8];
+        private static LightType[,] SlideCell(in LightType[,] _baseColors, in Vector2Int _dir) {
+            var tmpColors = new LightType[8, 8];
             for (var y = 8; y < 16; y++) {
                 for (var x = 8; x < 16; x++) {
                     tmpColors[x % 8, y % 8] = _baseColors[(x - _dir.x) % 8, (y + _dir.y) % 8];
@@ -61,8 +61,8 @@ namespace Develop.Scripts {
             return tmpColors;
         }
 
-        private static ColorType[,] AroundCell(in ColorType[,] _baseColors) {
-            var tmpColors = new ColorType[8, 8];
+        private static LightType[,] AroundCell(in LightType[,] _baseColors) {
+            var tmpColors = new LightType[8, 8];
 
             for (var y = 0; y < 8; y++) {
                 for (var x = 0; x < 8; x++) {
@@ -73,10 +73,10 @@ namespace Develop.Scripts {
             return tmpColors;
         }
 
-        private void DrawCell(in ColorType[,] _colorTypes) {
+        private void DrawCell(in LightType[,] _colorTypes) {
             for (var y = 0; y < 8; y++) {
                 for (var x = 0; x < 8; x++) {
-                    mCellMonoArrays[x, y].SetColor(_colorTypes[x, y]);
+                    mCellMonoArrays[x, y].SetLight(_colorTypes[x, y]);
                     mDrewColors[x, y] = _colorTypes[x, y];
                 }
             }
@@ -84,7 +84,7 @@ namespace Develop.Scripts {
 
         public void Randomize(in int _depth, in int _slideCount, int _reverse) {
             //初期化
-            var tmpColors = new ColorType[8, 8];
+            var tmpColors = new LightType[8, 8];
             var dirVector = new[] {
                 Vector2Int.left
               , Vector2Int.up

@@ -8,14 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847A0FA-F944-44CC-BAF1-958021B27F54/1f/76c05c7e/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C2C5182F-F254-46F6-96F5-ABEDCFA6DB98/ca/883189ee/NativeMethodAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/33/a35fa940/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/77/ecc633a8/BitArray.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/e0/844a6f6f/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847A0FA-F944-44CC-BAF1-958021B27F54/78/e96a7d0d/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847A0FA-F944-44CC-BAF1-958021B27F54/97/8eb54277/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847A0FA-F944-44CC-BAF1-958021B27F54/40/43309943/Transform.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,8 +25,9 @@
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorTypeExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Bits.cs" />
-        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorType.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/BitExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/LightType.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Drawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/SerializeManagerMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellMono.cs" />
@@ -48,6 +42,7 @@
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -80,5 +75,9 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="377" y="147" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689/460.1080.1000.504@0.0.1280.689" timestamp="1609491275686" />
+    <state x="2388" y="165" key="SettingsEditor" timestamp="1609923802699">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609923802699" />
   </component>
 </project>

@@ -12,9 +12,9 @@
           <e p="Scripts" t="Include">
             <e p="BitExtensions.cs" t="Include" />
             <e p="CellMono.cs" t="Include" />
-            <e p="ColorType.cs" t="Include" />
             <e p="Drawer.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
+            <e p="LightType.cs" t="Include" />
             <e p="MatsuExtensions.cs" t="Include" />
             <e p="SerializeManagerMono.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />

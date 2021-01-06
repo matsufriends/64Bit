@@ -4,54 +4,32 @@ using UnityEngine;
 namespace Develop.Scripts {
     public class CellMono : MonoBehaviour {
         [SerializeField] private SpriteRenderer mSpriteRenderer;
-        [SerializeField] private Transform      mBlackPanel;
-        [SerializeField] private Transform      mWhitePanel;
 
-        private ColorType mCachedColor;
+        private LightType mCachedLight;
 
-        private Tween mBlackTween;
-        private Tween mWhiteTween;
+        private Tween mAnimTween;
 
-        private static readonly Vector3 sFront = new Vector3(0, 0, -0.1f);
-        private static readonly Vector3 sBack  = new Vector3(0, 0, 0.1f);
-
-        private const float cScaleDuration = 0.2f;
-        private const Ease  cScaleEase     = Ease.OutQuart;
-
-        public void SetColor(ColorType _colorType) {
-            if (mCachedColor == _colorType) return;
+        public void SetLight(LightType _lightType) {
+            if (mCachedLight == _lightType) return;
 
             //Tween停止
-            mBlackTween.Kill();
-            mWhiteTween.Kill();
+            mAnimTween.Kill();
 
-            //ベース
-            switch (mCachedColor) {
-                case ColorType.Black:
-                    mBlackPanel.localScale    = Vector3.one;
-                    mBlackPanel.localPosition = sBack;
+            //ボタン点く 
+            
+            //アニメーション
+            switch (_lightType) {
+                case LightType.Off:
+                    mSpriteRenderer.sprite                  = SerializeManagerMono.Instance.LightOff;
+                    mSpriteRenderer.transform.localPosition =Vector3.zero;
                     break;
-                case ColorType.White:
-                    mWhitePanel.localScale    = Vector3.one;
-                    mWhitePanel.localPosition = sBack;
+                case LightType.On:
+                    mSpriteRenderer.sprite                  = SerializeManagerMono.Instance.LightOn;
+                    mSpriteRenderer.transform.localPosition = Vector3.up * SerializeManagerMono.Instance.LightOnOffset;
                     break;
             }
 
-            //上
-            switch (_colorType) {
-                case ColorType.Black:
-                    mBlackPanel.localScale    = Vector3.zero;
-                    mBlackPanel.localPosition = sFront;
-                    mBlackTween               = mBlackPanel.DOScale(Vector3.one, cScaleDuration).SetEase(cScaleEase);
-                    break;
-                case ColorType.White:
-                    mWhitePanel.localScale    = Vector3.zero;
-                    mWhitePanel.localPosition = sFront;
-                    mWhiteTween               = mWhitePanel.DOScale(Vector3.one, cScaleDuration).SetEase(cScaleEase);
-                    break;
-            }
-
-            mCachedColor = _colorType;
+            mCachedLight = _lightType;
         }
     }
 }

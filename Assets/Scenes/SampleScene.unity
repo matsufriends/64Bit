@@ -1988,6 +1988,9 @@ MonoBehaviour:
   mRandomizeDepth: 4
   mRandomizeSlide: 5
   mRandomizeReverse: 30
+  mLightOnSprite: {fileID: 21300000, guid: 0a15678aac0ef6046a1597e8a33d2e3c, type: 3}
+  mLightOffSprite: {fileID: 21300000, guid: d2af6c5201fbd1f4cb11d903ed8d456b, type: 3}
+  mLightOnOffset: -0.01
 --- !u!1 &2035297743
 GameObject:
   m_ObjectHideFlags: 0

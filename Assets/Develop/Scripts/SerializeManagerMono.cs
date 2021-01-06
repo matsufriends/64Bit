@@ -30,6 +30,14 @@ namespace Develop.Scripts {
         [SerializeField] private int mRandomizeSlide;
         [SerializeField] private int mRandomizeReverse;
 
+        [SerializeField] private Sprite mLightOnSprite;
+        [SerializeField] private Sprite mLightOffSprite;
+
+        [SerializeField] private float mLightOnOffset;
+
+        public Sprite LightOn        => mLightOnSprite;
+        public Sprite LightOff       => mLightOffSprite;
+        public float  LightOnOffset => mLightOnOffset;
 
         private       Drawer mDrawer;
         private const float  cCellSize = 0.2f;
@@ -51,6 +59,8 @@ namespace Develop.Scripts {
 
         public CellMono GenerateCell(int _x, int _y) {
             var cell      = Instantiate(mCellPrefab, transform);
+            cell.SetLight(LightType.On);
+            cell.SetLight(LightType.Off);
             var cellTrans = cell.transform;
             cellTrans.localPosition = new Vector2(_x - 3.5f, -_y + 3.5f) * cCellSize;
             cellTrans.name          = $"({_x},{_y})";
