@@ -18,7 +18,6 @@
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Main.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellData.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/MyExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ButtonMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/DrawerMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/MatuExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/MatsuExtensions.cs" />
@@ -28,9 +27,10 @@
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/BitExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ColorType.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/LightType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Drawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/CellMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/ButtonMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Develop/Scripts/SerializeManagerMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/Develop/Scripts/Drawer.cs" />
       </list>
     </option>
   </component>

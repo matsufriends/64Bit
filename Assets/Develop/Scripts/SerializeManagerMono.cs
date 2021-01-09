@@ -7,45 +7,30 @@ using UnityEngine.UI;
 
 namespace Develop.Scripts {
     public class SerializeManagerMono : SingletonMono<SerializeManagerMono> {
-        [SerializeField] private GameObject mStagePreviousButton;
-        [SerializeField] private GameObject mStageNextButton;
+        [SerializeField] private ButtonMono mLeftButton;
+        [SerializeField] private ButtonMono mUpButton;
+        [SerializeField] private ButtonMono mRightButton;
+        [SerializeField] private ButtonMono mDownButton;
+        [SerializeField] private ButtonMono mReverseButton;
 
         [SerializeField] private GameObject mCellPreviousButton;
         [SerializeField] private GameObject mCellNextButton;
         [SerializeField] private GameObject mCellResetButton;
         [SerializeField] private GameObject mHelpButton;
-
-        [SerializeField] private GameObject mLeftButton;
-        [SerializeField] private GameObject mUpButton;
-        [SerializeField] private GameObject mRightButton;
-        [SerializeField] private GameObject mDownButton;
-        [SerializeField] private GameObject mReverseButton;
-
-        [SerializeField] private Text mStageNumText;
+        
+        //[SerializeField] private Text mStageNumText;
         [SerializeField] private Text mCountText;
 
-        [SerializeField] private CellMono mCellPrefab;
+        [SerializeField] private ButtonMono mBitPrefab;
 
         [SerializeField] private int mRandomizeDepth;
         [SerializeField] private int mRandomizeSlide;
         [SerializeField] private int mRandomizeReverse;
 
-        [SerializeField] private Sprite mLightOnSprite;
-        [SerializeField] private Sprite mLightOffSprite;
-
-        [SerializeField] private float mLightOnOffset;
-
-        public Sprite LightOn        => mLightOnSprite;
-        public Sprite LightOff       => mLightOffSprite;
-        public float  LightOnOffset => mLightOnOffset;
-
         private       Drawer mDrawer;
         private const float  cCellSize = 0.2f;
 
-        public  IObservable<Unit> OnPreviousButton => mCellPreviousButton.OnMouseDownAsObservable();
-        public  IObservable<Unit> OnNextButton     => mCellNextButton.OnMouseDownAsObservable();
         public  IObservable<Unit> OnRestartButton  => mCellResetButton.OnMouseDownAsObservable();
-        private IObservable<Unit> OnNewButton      => mLeftButton.OnMouseDownAsObservable();
 
         private void Awake() {
             mDrawer = new Drawer();
@@ -53,18 +38,15 @@ namespace Develop.Scripts {
             //カウント更新
             mDrawer.OnCountChanged.Subscribe(_count => mCountText.text = _count.ToString());
 
-            //新規作成
-            OnNewButton.Subscribe(_ => Randomize());
         }
 
-        public CellMono GenerateCell(int _x, int _y) {
-            var cell      = Instantiate(mCellPrefab, transform);
-            cell.SetLight(LightType.On);
-            cell.SetLight(LightType.Off);
-            var cellTrans = cell.transform;
+        public ButtonMono GenerateBit(int _x, int _y) {
+            var bit      = Instantiate(mBitPrefab, transform);
+            bit.SetStatus(false);
+            var cellTrans = bit.transform;
             cellTrans.localPosition = new Vector2(_x - 3.5f, -_y + 3.5f) * cCellSize;
             cellTrans.name          = $"({_x},{_y})";
-            return cell;
+            return bit;
         }
 
         [Button("Randomize")]

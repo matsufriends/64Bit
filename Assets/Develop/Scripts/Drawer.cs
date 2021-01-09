@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Develop.Scripts {
     public class Drawer {
-        private readonly CellMono[,] mCellMonoArrays = new CellMono[8, 8];
+        private readonly ButtonMono[,] mBitArrays = new ButtonMono[8, 8];
 
         private readonly LightType[,] mStartColors = new LightType[8, 8];
         private readonly LightType[,] mDrewColors  = new LightType[8, 8];
@@ -18,7 +18,7 @@ namespace Develop.Scripts {
             //初期化
             for (var y = 0; y < 8; y++) {
                 for (var x = 0; x < 8; x++) {
-                    mCellMonoArrays[x, y] = SerializeManagerMono.Instance.GenerateCell(x, y);
+                    mBitArrays[x, y] = SerializeManagerMono.Instance.GenerateBit(x, y);
                 }
             }
 
@@ -76,7 +76,7 @@ namespace Develop.Scripts {
         private void DrawCell(in LightType[,] _colorTypes) {
             for (var y = 0; y < 8; y++) {
                 for (var x = 0; x < 8; x++) {
-                    mCellMonoArrays[x, y].SetLight(_colorTypes[x, y]);
+                    mBitArrays[x, y].SetStatus(_colorTypes[x, y]==LightType.On);
                     mDrewColors[x, y] = _colorTypes[x, y];
                 }
             }
