@@ -19,6 +19,7 @@
             <e p="SerializeManagerMono.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
             <e p="SingletonMono.cs" t="Include" />
+            <e p="SliderMono.cs" t="Include" />
             <e p="StageMono.cs" t="Include" />
           </e>
         </e>
