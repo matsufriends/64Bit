@@ -4,7 +4,7 @@ using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 
-namespace Develop.Scripts {
+namespace BitPuz.UI {
     public class ButtonMono : MonoBehaviour {
         [SerializeField] private GameObject mNormalGameObject;
         [SerializeField] private GameObject mPressedGameObject;

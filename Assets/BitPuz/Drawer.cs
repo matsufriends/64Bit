@@ -1,9 +1,11 @@
 ﻿using System;
+using BitPuz.UI;
 using UniRx;
 using UnityEngine;
+using LightType = BitPuz.Enum.LightType;
 using Random = UnityEngine.Random;
 
-namespace Develop.Scripts {
+namespace BitPuz {
     public class Drawer {
         private readonly ButtonMono[,] mBitArrays = new ButtonMono[8, 8];
 
@@ -76,7 +78,7 @@ namespace Develop.Scripts {
         private void DrawCell(in LightType[,] _colorTypes) {
             for (var y = 0; y < 8; y++) {
                 for (var x = 0; x < 8; x++) {
-                    mBitArrays[x, y].SetStatus(_colorTypes[x, y]==LightType.On);
+                    mBitArrays[x, y].SetStatus(_colorTypes[x, y] == LightType.On);
                     mDrewColors[x, y] = _colorTypes[x, y];
                 }
             }
@@ -93,7 +95,7 @@ namespace Develop.Scripts {
             };
 
             var beforeDir = Random.Range(0, 4);
-            
+
             //スコア初期化
             mCount.Value = 0;
 

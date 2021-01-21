@@ -1,4 +1,4 @@
-namespace Develop.Scripts {
+namespace BitPuz.Enum {
     public enum LightType {
         Off
       , On

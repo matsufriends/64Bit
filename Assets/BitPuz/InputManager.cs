@@ -2,7 +2,7 @@ using System;
 using UniRx;
 using UnityEngine;
 
-namespace Develop.Scripts {
+namespace BitPuz {
     public static class InputManager {
         private static bool Left  => Input.GetKeyDown(KeyCode.LeftArrow);
         private static bool Up    => Input.GetKeyDown(KeyCode.UpArrow);

@@ -1,11 +1,13 @@
 using System;
+using BitPuz.Singleton;
+using BitPuz.UI;
 using Sirenix.OdinInspector;
-using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Develop.Scripts {
+namespace BitPuz {
     public class SerializeManagerMono : SingletonMono<SerializeManagerMono> {
         [SerializeField] private ButtonMono mLeftButton;
         [SerializeField] private ButtonMono mUpButton;

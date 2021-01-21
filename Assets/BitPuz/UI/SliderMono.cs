@@ -1,8 +1,8 @@
+using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
-using UniRx;
 
-namespace Develop.Scripts {
+namespace BitPuz.UI {
     public class SliderMono : MonoBehaviour {
         [SerializeField] private GameObject mDetection;
         [SerializeField] private Transform mHandle;

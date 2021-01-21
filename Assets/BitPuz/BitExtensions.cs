@@ -1,6 +1,7 @@
 using UnityEngine;
+using LightType = BitPuz.Enum.LightType;
 
-namespace Develop.Scripts {
+namespace BitPuz {
     public static class BitExtensions {
         public static LightType Reverse(this LightType _base) {
             return _base == LightType.Off ? LightType.On : LightType.Off;
